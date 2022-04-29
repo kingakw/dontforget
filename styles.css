@@ -112,7 +112,7 @@ color: var(--deep-dark);
 }
 
 .edit,
-.important{
+.complete{
     font-weight: bold;
 }
 
@@ -121,14 +121,15 @@ color: var(--deep-dark);
 }
 
 .completed {
-    font-size: 12px;
+    font-size: 16px;
     font-style: italic;
     color: var(--light-dark);
     text-decoration: line-through;
 }
 
+
 .popup {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
