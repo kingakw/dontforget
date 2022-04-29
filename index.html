@@ -6,13 +6,43 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DontForget</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;0,700;1,400&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Handlee&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/d9c49dfaa5.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+<div class="note">
+    <div>
+        <h1 class="header">Don't forget... todo list</h1>
+        <input type="text" class="note-input" placeholder="What needs to be done?">
+        <button class="add-btn">Add</button>
+    </div>
+    <div class="note-list">
+        <p class="alert-info">No tasks</p>
+        <ul>
+            <li  id="test">Coffee
+                <div class="tools">
+                    <button class="complete"><i class="fas fa-check"></i></button>
+                    <button class="important"><i class="fas fa-exclamation"></i></button>
+                    <button class="edit">EDIT</button>
+                    <button class="delete"><i class="fas fa-times"></i></button>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div class="popup">
+    <h3>Edit task:</h3>
+    <div class="popup-body">
+        <div class="popup-info"></div>
+        <input type="text" class="popup-input" placeholder="Rewrite...">
+        <button class="popup-btn accept">save</button>
+        <button class="popup-btn cancel">cancel</button>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>

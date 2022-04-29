@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --deep-dark: rgb(26, 26, 26);
+    --light-dark: rgb(79, 82, 92);
+    --light-gray: #ddd;
+    --yellow: rgb(238,238,155);
+    --deep-violet: #3057E1;
+    --light: rgb(245, 245, 245);
+    --red: tomato;
+    --font: 'Handlee', cursive;
+    --font-btn: 'Handlee', cursive;
+    --border-color: rgba(0, 0, 0, .2);
+    --green: #D0E17A;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    background-color: var(--light);
+    font-family: var(--font);
+    font-size: 18px;
+}
+
+.note {
+    width: 600px;
+    text-align: center;
+    background: var(--yellow);
+    box-shadow: 4px 4px 5px rgba(82, 82, 82, .4);
+    border-radius: 3px;
+color: var(--deep-dark);
+}
+
+.header {
+    font-family: 'Fasthand', cursive;
+    margin: 0 20px;
+    color: var(--deep-dark);
+}
+
+.note-input {
+    width: 80%;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    color: var(--deep-violet);
+    background-color: var(--light);
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.add-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    color: var(--deep-dark);
+    background-color: transparent;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color .3s, color .3s;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.add-btn:hover {
+    color: #fff;
+    background-color: var(--light-dark);
+}
+
+.note-list {
+    padding: 20px 0;
+}
+
+.alert-info {
+    color: var(--red);
+}
+
+.note-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding-left: 15px;
+    text-align-last: left;
+    list-style: none;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.note-list li :last-child {
+    border-bottom: none;
+}
+
+.tools {
+    display: inline-block;
+}
+
+.tools button {
+    padding: 15px 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.tools button:hover {
+    background-color: #ddd;
+}
+
+.edit,
+.important{
+    font-weight: bold;
+}
+
+.delete {
+    color: tomato;
+}
+
+.completed {
+    font-size: 12px;
+    font-style: italic;
+    color: var(--light-dark);
+    text-decoration: line-through;
+}
+
+.popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    color: var(--deep-dark);
+    background-color: var(--green);
+    border-radius: 3px;
+}
+
+.popup h3 {
+    padding-top: 20px;
+}
+
+.popup-info {
+    margin-bottom: 20px;
+    color: var(--light);
+}
+
+.popup-body {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+    padding: 10px;
+}
+
+.popup-input {
+    width: 100%;
+    padding: 10px;
+    color: var(--light-dark);
+    font-family: var(--font);
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.popup-btn {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: background-color .3s, color .3s;
+}
+
+.popup-btn:hover {
+    background-color: var(--light-gray);
+}
