@@ -86,9 +86,6 @@ const checkClick = e => {
         if (e.target.closest('button').classList.contains('complete')) {
             e.target.closest('li').classList.toggle('completed');
             e.target.closest('button').classList.toggle('completed');
-        }else if  (e.target.closest('button').classList.contains('important')) {
-            e.target.closest('li').classList.toggle('important');
-            e.target.closest('button').classList.toggle('high-important');
         } else if  (e.target.closest('button').classList.contains('edit')) {
             editTask(e);
         }else if  (e.target.closest('button').classList.contains('delete')) {
@@ -97,5 +94,13 @@ const checkClick = e => {
     }
 }
 
+const deleteTask = e => {
+    const deleteLine = e.target.closest('li');
+    deleteLine.remove();
+
+    if (ALL_TASKS.length === 0){
+        ALERT_INFO.innerText ='No tasks';
+    }
+}
 
 document.addEventListener('DOMContentLoaded', main);
