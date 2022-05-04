@@ -7,6 +7,7 @@
 :root {
     --deep-dark: rgb(26, 26, 26);
     --light-dark: rgb(79, 82, 92);
+    --border-color: rgba(0, 0, 0, .2);
     --light-gray: #ddd;
     --yellow: rgb(238,238,155);
     --deep-violet: #3057E1;
@@ -14,8 +15,8 @@
     --red: tomato;
     --font: 'Handlee', cursive;
     --font-btn: 'Handlee', cursive;
-    --border-color: rgba(0, 0, 0, .2);
-    --green: #D0E17A;
+    --edit-note: rgb(254, 171, 217);
+    --edit-note-input: rgb(255, 214, 235);
 }
 
 body {
@@ -55,6 +56,7 @@ color: var(--deep-dark);
 }
 
 .add-btn {
+    font-family: var(--font);
     padding: 10px 20px;
     border: none;
     border-radius: 3px;
@@ -76,7 +78,8 @@ color: var(--deep-dark);
     padding: 20px 0;
 }
 
-.alert-info {
+.alert-info,
+.popup-alert{
     color: var(--red);
 }
 
@@ -100,6 +103,8 @@ color: var(--deep-dark);
 }
 
 .tools button {
+    font-family: var(--font);
+    font-weight: bold;
     padding: 15px 5px;
     border: none;
     background-color: transparent;
@@ -127,19 +132,18 @@ color: var(--deep-dark);
     text-decoration: line-through;
 }
 
-
 .popup {
     display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: fixed;
-    bottom: 30px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
     width: 600px;
     color: var(--deep-dark);
-    background-color: var(--green);
+    background-color: var(--edit-note);
     border-radius: 3px;
 }
 
@@ -162,12 +166,12 @@ color: var(--deep-dark);
 
 .popup-input {
     width: 100%;
-    padding: 10px;
     color: var(--light-dark);
     font-family: var(--font);
-    background-color: transparent;
+    background-color: var(--edit-note-input);
+    padding: 10px 20px;
+    margin-right: 10px;
     border: none;
-    border-bottom: 2px solid var(--border-color);
     font-weight: bold;
     font-size: 18px;
 }

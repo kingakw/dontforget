@@ -1,12 +1,12 @@
 let NOTE_INPUT;
 let ALERT_INFO; // info o braku zadań / konieczności dodania tekstu
 let ADD_BTN; // przycisk ADD - dodaje nowe elementy do listy
-let UL_LIST; // nasza lista zadań, tagi <ul></ul>
+let TASK; // nasza lista zadań, tagi <ul></ul>
 let NEW_TASK; // nowo dodany LI, nowe zadanie
 let ALL_TASKS; // lista wszystkich dodanych LI
 let POPUP;
-let POPUP_INFO; // alert w popupie, jak się doda pusty tekst
-//let EDITED_NOTE;
+let POPUP_ALERT; // alert w popupie, jak się doda pusty tekst
+let EDITED_NOTE;
 let POPUP_INPUT;
 let SAVE_POPUP_BTN;
 let CLOSE_TODO_BTN;
@@ -22,21 +22,22 @@ const prepareDOMElements = () => {
     NOTE_INPUT = document.querySelector('.note-input');
     ALERT_INFO = document.querySelector('.alert-info');
     ADD_BTN = document.querySelector('.add-btn');
-    UL_LIST = document.querySelector('.note-list ul');
+    TASK = document.querySelector('.note-list ul');
     ALL_TASKS = document.getElementsByTagName('li');
     POPUP = document.querySelector('.popup');
-    POPUP_INFO = document.querySelector('.popup-info');
+    POPUP_ALERT = document.querySelector('.popup-alert');
     POPUP_INPUT = document.querySelector('.popup-input');
-    SAVE_POPUP_BTN = document.querySelector('.accept');
-    CLOSE_TODO_BTN = document.querySelector('.cancel');
+    SAVE_POPUP_BTN = document.getElementById('save');
+    CLOSE_TODO_BTN = document.getElementById('cancel');
 }
 
 const prepareDOMEvents = () => {
     ADD_BTN.addEventListener('click', addNewTask);
     NOTE_INPUT.addEventListener('keyup', enterCheck);
-    UL_LIST.addEventListener('click', checkClick);
+    TASK.addEventListener('click', checkClick);
+    SAVE_POPUP_BTN.addEventListener('click', changeTask);
+    CLOSE_TODO_BTN.addEventListener('click', closePopup)
 }
-
 
 const addNewTask = () => {
     if (NOTE_INPUT.value !== ''){
@@ -44,7 +45,7 @@ const addNewTask = () => {
         NEW_TASK = document.createElement('li');
         NEW_TASK.innerText = NOTE_INPUT.value;
         NEW_TASK.setAttribute('id', `note-${ID}`);
-        UL_LIST.appendChild(NEW_TASK);
+        TASK.appendChild(NEW_TASK);
 
         NOTE_INPUT.value = '';
         ALERT_INFO.innerText = '';
@@ -99,8 +100,31 @@ const deleteTask = e => {
     deleteLine.remove();
 
     if (ALL_TASKS.length === 0){
-        ALERT_INFO.innerText ='No tasks';
+        ALERT_INFO.innerText ='You have no new tasks';
     }
 }
+
+const editTask = e => {
+    const oldToDo = e.target.closest('li').id;
+    EDITED_NOTE  = document.getElementById(oldToDo);
+    POPUP_INPUT.value = EDITED_NOTE.firstChild.textContent;
+    POPUP.style.display = 'flex';
+}
+
+const changeTask = () => {
+    if(POPUP_INPUT.value !== ''){
+        EDITED_NOTE.firstChild.textContent = POPUP_INPUT.value ;
+        POPUP.style.display = 'none';
+        POPUP_ALERT.innerText = '';
+    }else{
+        POPUP_ALERT.innerText = 'Add what needs to be done'
+    }
+}
+
+const closePopup = () => {
+    POPUP.style.display = 'none';
+    POPUP_ALERT.innerText = '';
+}
+
 
 document.addEventListener('DOMContentLoaded', main);
