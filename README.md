@@ -18,7 +18,7 @@ You can clear a single task or all of them.
 * You can remove your task - it wil be shown as cross out
 
 # ▶️ DEMO
-https://kingakw.github.io/....
+https://kingakw.github.io/dontforget/
 
 ![BooksScreen](sample.png)
 
