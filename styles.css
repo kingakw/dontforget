@@ -7,16 +7,16 @@
 :root {
     --deep-dark: rgb(26, 26, 26);
     --light-dark: rgb(79, 82, 92);
-    --border-color: rgba(0, 0, 0, .2);
+    --border-color: rgb(226,226,226);
     --light-gray: #ddd;
-    --yellow: rgb(238,238,155);
+    --yellow: rgb(238, 238, 155);
     --deep-violet: #3057E1;
     --light: rgb(245, 245, 245);
     --red: tomato;
     --font: 'Handlee', cursive;
     --font-btn: 'Handlee', cursive;
     --edit-note: rgb(254, 171, 217);
-    --edit-note-input: rgb(255, 214, 235);
+    --edit-note-input: rgba(255, 255, 255, .85);
 }
 
 body {
@@ -34,7 +34,7 @@ body {
     background: var(--yellow);
     box-shadow: 4px 4px 5px rgba(82, 82, 82, .4);
     border-radius: 3px;
-color: var(--deep-dark);
+    color: var(--deep-dark);
 }
 
 .header {
@@ -79,7 +79,7 @@ color: var(--deep-dark);
 }
 
 .alert-info,
-.popup-alert{
+.popup-alert {
     color: var(--red);
 }
 
@@ -117,7 +117,7 @@ color: var(--deep-dark);
 }
 
 .edit,
-.complete{
+.complete {
     font-weight: bold;
 }
 
